@@ -46,7 +46,7 @@ const onRequest = (request, response) => {
     const parsedURL = new URL(request.url, `${protocol}://${request.headers.host}`);
 
     if (request.method === 'POST')
-        parseBody(request, response, urlStruct['/addUser']);
+        parseBody(request, response, urlStruct[parsedURL.pathname]);
     else if (urlStruct[parsedURL.pathname])
         urlStruct[parsedURL.pathname](request, response);
     else
