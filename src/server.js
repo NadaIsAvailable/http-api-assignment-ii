@@ -1,7 +1,6 @@
 const http = require('http');
 const jsonHandler = require('./jsonHandler.js');
 const htmlHandler = require('./htmlHandler.js');
-const { url } = require('inspector');
 
 const port = process.env.PORT || process.env.NODE_PORT || 3000;
 
@@ -38,7 +37,6 @@ const urlStruct = {
     '/': htmlHandler.getIndex,
     '/style.css': htmlHandler.getStyle,
     '/getUsers': jsonHandler.getUsers,
-    '/notReal': jsonHandler.notReal,
     '/addUser': jsonHandler.addUser,
     notFound: jsonHandler.getNotFound,
 };

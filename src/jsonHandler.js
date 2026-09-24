@@ -7,14 +7,10 @@ const getUsers = (request, response) => {
     utils.respond(request, response, 200, 'application/json', JSON.stringify(responseJSON));
 };
 
-const notReal = (request, response) => {
-
-};
-
 const addUser = (request, response) => {
     const responseJSON = {
         message: 'Created Successfully'
-    }
+    };
 
     const { name, age } = request.body;
 
@@ -45,12 +41,16 @@ const addUser = (request, response) => {
 };
 
 const getNotFound = (request, response) => {
+    const responseJSON = {
+        id: 'notFound',
+        message: 'The page you are looking for was not found.',
+    };
 
+    utils.respond(request, response, 404, 'application/json', JSON.stringify(responseJSON));
 };
 
 module.exports = {
     getUsers,
-    notReal,
     addUser,
     getNotFound,
 };
